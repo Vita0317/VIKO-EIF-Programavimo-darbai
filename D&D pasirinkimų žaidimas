@@ -1,0 +1,10 @@
+#include <iostream>    //leidzia naudotis standartine biblioteka
+using namespace std;    //pasako, kad naudosiu identifikatorius is std bibliotekos ir ju nereiks kartoti
+
+int main()
+{
+cout << "    D&D pasirinkimų žaidimas" << endl;
+endl;
+endl;
+cout << "Norėdami pradėti spauskite ENTER" ;
+cin.ignore()
