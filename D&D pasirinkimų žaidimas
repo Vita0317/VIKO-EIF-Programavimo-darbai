@@ -4,7 +4,4 @@ using namespace std;    //pasako, kad naudosiu identifikatorius is std bibliotek
 int main()
 {
 cout << "    D&D pasirinkimų žaidimas" << endl;
-endl;
-endl;
 cout << "Norėdami pradėti spauskite ENTER" ;
-cin.ignore()
