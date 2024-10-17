@@ -1,7 +1,90 @@
-#include <iostream>    //leidzia naudotis standartine biblioteka
-using namespace std;    //pasako, kad naudosiu identifikatorius is std bibliotekos ir ju nereiks kartoti
+#include <iostream>    //lets me use libraries for functions
+#include <string>
+using namespace std;   //i don't need to repeat the std with all functions, like int
+
+
+// to define a structure for the player's character
+struct Character {
+    string name;
+    string characterClass;
+    int health;
+    int strength;
+    int intelligence;
+    int dexterity;
+};
+
+Character createCharacter()
+{
+    Character player;
+    cout << "Enter your character's name : ";
+    cin >> player.name;
+
+    // class choices
+    cout << "Choose your class(Warrior, Mage, Assassin) :";
+
+    string classChoice;
+    cin >> classChoice;
+
+  if (classChoice == "Warrior")
+        {
+        player.characterClass = "Warrior";
+        player.health = 100;
+        player.strength = 5;
+        player.intelligence = 2;
+        player.dexterity = 3;
+        }
+     else if (classChoice == "Mage")
+        {
+        player.characterClass = "Mage";
+        player.health = 60;
+        player.strength = 2;
+        player.intelligence = 5;
+        player.dexterity = 3;
+        }
+     else if (classChoice == "Assassin")
+        {
+        player.characterClass = "Assassin";
+        player.health = 80;
+        player.strength = 2;
+        player.intelligence = 3;
+        player.dexterity = 5;
+        }
+     else
+        {
+        // uses default option of Warrior if input is incorrect
+        cout << "Invalid choice, defaulting to Warrior.\n";
+        player.characterClass = "Warrior";
+        player.health = 100;
+        player.strength = 5;
+        player.intelligence = 2;
+        player.dexterity = 3;
+        }
+
+    // Output the character's stats
+    cout << "\nName: " << player.name << "\n";
+    cout << "Class: " << player.characterClass << "\n";
+    cout << "Health: " << player.health << "\n";
+    cout << "Strength: " << player.strength << "\n";
+    cout << "Intelligence: " << player.intelligence << "\n";
+    cout << "Dexterity: " << player.dexterity << "\n";
+
+    return player;
+}
 
 int main()
 {
-cout << "    D&D pasirinkimų žaidimas" << endl;
-cout << "Norėdami pradėti spauskite ENTER" ;
+cout << "        Dungeons and Dragons : Choose your own fate \n" << endl;
+cout << "  Welcome to the world of Dungeons and Dragons. You will be the hero in our story today. " << endl;
+cout << "On your journey you will reach way-points, where you will be asked to make a choice, which will determine your story. " << endl;
+cout << "Each choice has its own skill check: if you roll the dice and the number rolled plus your class dedicated skill points,is greater than required skill check points,you succeed. " <<endl;
+cout << "But if it is lesser than the number required, then the outcome will have consequences. " <<endl;
+cout << "There also is a mysterious ghost following you and offering you help on the way. " <<endl;
+cout << "If you fail a skill check your mysterious ghost friend will give you a riddle. If you solve it, then you will not get a penalty for failed skill check. " <<endl;
+cout << "Good luck on your journey \n " << endl;
+cout << "When you are ready to begin, press ENTER \n " << endl;
+cin.ignore(); //ignores all keyboard inputs except enter
+ Character player = createCharacter();
+
+return 0;
+}
+
